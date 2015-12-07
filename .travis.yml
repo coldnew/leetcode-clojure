@@ -1,5 +1,8 @@
 language: clojure
 sudo: false
+env:
+  global:
+    secure: NdyM1fIN/4Kcyg92a53509HKQV7xL6vcuiYOTmBoopfh+djS4RMb5tNbiDCT4eCUfTfHrv/cfqpBQobx6inmi/oTN9PdQMPwn4FedmKnEWk9yZX7VOM4+XN2I52kLy6SvisXsLLG1HxiiE1kDKKRBD7Ez9YPzEB5usjggq4bEOXL3+wnjDwQwxKSxmTFm/CyTW1uof0fvdOfAObsrxiQ9N5ggfJSMaq5/S+BiOOCQHYZ3kLJYBTv3q1MUznMOAGYzpysVLjeDN8dBUHCF9hbb1Fmm7j1khLgEaZFkBovhBaDNgUhvRLDvCVeHz3duLiC5EoQL4Ktv7fkntOBfnkb3EK5/mz6Os5P/TuYZY0hcVIzC2kKdQAOgfrL4rmkFzransEZmYy95IaplMQSmAiCXMpCDioFLlq71WFCodvxGf9NHuystZH9iYNinR/3Q+qUW2tNPuooiQQs6Yx4nSiriEUrPPOyucHQmFaJ5DWU/QQkTYlonnYIl1I1b4lbvlCB5IdO8Iq8yzdizlZTHmxufzszG38GH9rf9u0Bdx2WSXLQC07USEhTQI13RWnXCBf+r9g9H+pUzEwcHCV+ahkU6Ktxt0qF0HH1qGj53TDfLYmaDJS5b0F0Zi8QyXG35IQ+VX5Lv2qQQXZsy19vEgMd599bzTf1dtpEFj0mAoXvUY0=
 jdk:
   - oraclejdk8
 before_install:
@@ -9,3 +12,5 @@ before_install:
 lein: ~/bin/lein
 script:
   - lein spec
+  - lein marg
+  - ./deploy.sh
