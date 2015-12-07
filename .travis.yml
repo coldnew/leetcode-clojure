@@ -1,0 +1,11 @@
+language: clojure
+sudo: false
+jdk:
+  - oraclejdk8
+before_install:
+  - mkdir ~/bin
+  - wget https://raw.github.com/technomancy/leiningen/stable/bin/lein -P ~/bin/
+  - chmod a+x ~/bin/lein
+lein: ~/bin/lein
+script:
+  - lein spec
