@@ -12,11 +12,8 @@ DATE=$(date)
 rm -rf $OUT || exit 0;
 git clone "https://${GH_TOKEN}@${GH_REF}" $OUT
 
-# checkout to gh-pages
-git checkout -b gh-pages origin/gh-pages
-
 # remove all data in $OUT
-(cd $OUT; git rm -rf *)
+(cd $OUT; git checkout -b gh-pages origin/gh-pages ; git rm -rf *)
 
 # Copy all prebuild files
 cp docs/uberdoc.html $OUT/index.html
