@@ -7,5 +7,6 @@
                  [criterium "0.4.3"]]
 
   :profiles {:dev {:dependencies [[speclj "3.3.0"]]}}
-  :plugins [[speclj "3.3.0"]]
+  :plugins [[speclj "3.3.0"]
+            [michaelblume/lein-marginalia "0.9.0"]]
   :test-paths ["spec"])

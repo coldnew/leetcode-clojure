@@ -5,12 +5,7 @@
 ;;
 ;; The order of elements can be changed. It doesn't matter what you leave beyond
 ;; the new length.
-(ns leetcode.remove-element
-  (:require [criterium.core :refer [bench]]))
-
-;; NOTE:
-;; since this problem need in-place replacement, we use atom to achive the
-;; prolem requirement
+(ns leetcode.remove-element)
 
 ;; the really remove-element implement
 (defn remove-element-impl [nums val]
@@ -21,7 +16,8 @@
   (reset! nums (remove-element-impl @nums val))
   (count @nums))
 
-(defn test-element ;; [nums val expect]
+;; verify function, testcase is in speclj
+(defn verify
   [{:keys [nums val expect]}]
   (let [arr (atom nums)]
     ;; calculate value and check result size

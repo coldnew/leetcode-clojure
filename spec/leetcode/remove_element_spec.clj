@@ -3,16 +3,6 @@
             [speclj.run.standard]
             [leetcode.remove-element :refer :all]))
 
-(defn verify
-  [{:keys [nums val expect]}]
-  (let [arr (atom nums)]
-    ;; calculate value and check result size
-    (should (= (remove-element arr val) (count expect)))
-    ;; Make surce array is what we expect
-    (should (= @arr expect))
-    ;; All is well
-    true))
-
 (describe
  "https://leetcode.com/problems/remove-element/
 
